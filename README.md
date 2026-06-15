@@ -4,22 +4,26 @@
 
 ## 使い方
 
-1. 依存関係をインストールします。
-
 ```bash
 npm install
-```
-
-2. 開発サーバーを起動します。
-
-```bash
 npm run dev
 ```
 
-3. ブラウザで表示します。
+## 警報データ取得
+
+この初期構成では、次の順で警報取得を試みます。
+
+1. `/api/alerts` が利用できる場合は、そこから取得する
+2. 利用できない場合は、ブラウザから JMA の公開データを直接取得する
+
+GitHub Pages などの静的ホスティングでは、`/api/alerts` は使えないため、JMA 側の CORS 設定に依存します。もし直接取得できない場合は、Cloudflare Workers や GitHub Actions などの軽量な中継を追加してください。
 
 ## GitHub Pages について
 
-この初期版は静的な表示画面として構成しています。`public/warnings.json` を差し替えることで、表示内容を更新できます。
+Vite の `base: './'` 設定により、静的ビルドを GitHub Pages に配置しやすくしています。
 
-将来的に公開APIから自動取得する場合は、CORS 対応や取得元の仕様に合わせて `main.js` を拡張してください。
+```bash
+npm run build
+```
+
+生成された `dist/` を Pages に公開してください。
