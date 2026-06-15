@@ -1,22 +1,15 @@
 {
   "name": "weather-warn",
-  "version": "1.0.0",
-  "description": "気象庁などの公開情報を元に、特別警報や危険警報を自動取得して表示する災害情報テロップアプリです。",
-  "main": "server.js",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "test": "node --test"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kumapuni/weather-warn.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/kumapuni/weather-warn/issues"
-  },
-  "homepage": "https://github.com/kumapuni/weather-warn#readme"
+  "dependencies": {},
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
 }
